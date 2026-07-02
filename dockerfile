@@ -1,7 +1,21 @@
-FROM node:22-alpine
+FROM node:22-alpine as frontend-builder
 
-COPY ./Backend .
+COPY ./Frontend /app  
+
+WORKDIR /app
 
 RUN npm install
 
-CMD ["node", "server.js"]
+RUN npm run build
+
+FROM node:22-alpine
+
+COPY ./Backend /app
+
+WORKDIR /app
+
+RUN npm install
+
+COPY --from=frontend-builder /app/dist /app/public
+
+CMD ["node","server.js"]
