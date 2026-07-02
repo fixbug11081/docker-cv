@@ -1,0 +1,50 @@
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form-container {
+    display: flex;
+
+    padding-inline: 1.5rem;
+    padding: block 0.7rem;
+    gap: 0.5em;
+    h1 {
+      margin-left: 10px;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      padding-inline: 0.7rem;
+      padding-block: 0.5rem;
+      gap: 0.9rem;
+
+      input {
+        width: 150%;
+        height: 20px;
+        padding: 10px;
+        border-radius: 15px;
+      }
+    }
+    .bttn-primary {
+      width: 150%;
+      background-color: palevioletred;
+      margin-left: 10px;
+      border-radius: 15px;
+      height: 40px;
+      cursor: pointer;
+    }
+    button:hover {
+      transform: scale(0.9);
+    }
+    p {
+      margin-left: 15px;
+    }
+    a {
+      color: palevioletred;
+      text-decoration: none;
+    }
+  }
+}

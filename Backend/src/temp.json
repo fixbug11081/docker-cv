@@ -1,0 +1,54 @@
+{
+  "resume": {
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "phone": "+1-555-123-4567",
+    "education": [
+      {
+        "degree": "B.Sc. Computer Science",
+        "institution": "XYZ University",
+        "year": 2020
+      }
+    ],
+    "experience": [
+      {
+        "role": "Frontend Developer",
+        "company": "Tech Solutions Inc.",
+        "duration": "2020-2023",
+        "responsibilities": [
+          "Developed React-based web applications",
+          "Collaborated with backend team on API integration",
+          "Implemented responsive UI with CSS Flexbox and Grid"
+        ]
+      }
+    ],
+    "skills": ["React", "Redux", "Node.js", "MongoDB", "Express", "CSS Flexbox"]
+  },
+  "jobDescription": {
+    "title": "Full Stack Developer",
+    "company": "Innovative Apps Ltd.",
+    "location": "Remote",
+    "requirements": [
+      "Strong knowledge of React and Redux",
+      "Experience with Node.js and Express",
+      "Familiarity with MongoDB and Redis",
+      "Understanding of authentication systems"
+    ],
+    "responsibilities": [
+      "Build and maintain scalable web applications",
+      "Collaborate with cross-functional teams",
+      "Optimize performance and security",
+      "Write clean, maintainable code"
+    ]
+  },
+  "selfDescription": {
+    "summary": "Passionate developer with a strong background in building scalable web applications using React, Node.js, and MongoDB. Enthusiastic about solving complex problems and continuously learning new technologies.",
+    "strengths": [
+      "Problem-solving mindset",
+      "Strong debugging skills",
+      "Collaborative team player",
+      "Quick learner"
+    ],
+    "careerGoals": "To grow as a full stack developer, contribute to impactful projects, and explore advanced backend scaling techniques."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "matchScore": 88,
+  "technicalQuestions": [
+    {
+      "question": "You mentioned improving performance by 30% using React.memo and code splitting. Can you elaborate on other strategies you've used or would consider for optimizing React application performance?",
+      "intention": "To assess the candidate's depth of knowledge in React performance optimization beyond the mentioned techniques and understand their problem-solving approach.",
+      "answer": "The candidate should discuss various techniques such as virtualized lists, debouncing/throttling, optimizing re-renders (PureComponent, memoization with useMemo/useCallback), lazy loading components/routes, optimizing network requests, and using browser dev tools for profiling performance bottlenecks. Look for practical examples and a systematic approach to identifying and resolving performance issues."
+    },
+    {
+      "question": "You designed an authentication system using JWT and bcrypt. Can you walk me through the architecture and key security considerations you implemented? How would you handle token revocation or refresh tokens in such a system?",
+      "intention": "To evaluate the candidate's understanding of secure authentication practices, system design, and handling common security challenges like token management.",
+      "answer": "The candidate should explain the flow of JWTs (issuance, verification, storage), the role of bcrypt for password hashing, and other security aspects like HTTPS, preventing XSS/CSRF. For token revocation, they might discuss short-lived access tokens with longer-lived refresh tokens, blacklisting revoked tokens on the server-side, or database-backed session management for more control. Emphasize understanding trade-offs."
+    },
+    {
+      "question": "The job description requires experience with Redis. While you've used BullMQ with Redis, how would you leverage Redis for other use cases like caching, real-time data, or pub/sub mechanisms in a Node.js application?",
+      "intention": "To gauge the candidate's broader understanding and practical experience with Redis beyond job queues, specifically for common web application patterns.",
+      "answer": "The candidate should discuss Redis data structures (strings, hashes, lists, sets, sorted sets) and their application in caching (e.g., storing frequently accessed data, session management), real-time features (e.g., leaderboards using sorted sets, live updates via pub/sub), and rate limiting. They should be able to describe how they would integrate these features using a Node.js client library."
+    },
+    {
+      "question": "Describe a complex problem you've faced while developing scalable web applications. How did you approach debugging and solving it, and what did you learn from the experience?",
+      "intention": "To assess the candidate's problem-solving methodology, resilience, and ability to learn from challenges, aligning with the self-description of enjoying complex problems.",
+      "answer": "The candidate should present a specific, challenging scenario (e.g., a tricky production bug, a performance bottleneck in a high-traffic system, a complex integration issue). They should detail their steps in identifying the root cause (e.g., logging, monitoring, isolated testing), the solutions considered, the one implemented, and the impact. Emphasize what they learned about systems, tools, or process improvements."
+    },
+    {
+      "question": "The job description lists Redux as a requirement. Can you describe your experience with Redux or other state management libraries in React applications? If you haven't used Redux extensively, how would you approach learning and implementing it quickly for a new project?",
+      "intention": "To identify and assess the candidate's familiarity with Redux, and if there's a gap, to understand their learning approach for new technologies.",
+      "answer": "If experienced, the candidate should explain Redux's core principles (store, actions, reducers, middleware), its benefits, and how they've structured Redux applications. If less experienced, they should demonstrate awareness of its purpose and state a proactive learning plan (e.g., official docs, tutorials, building a small project, understanding Redux Toolkit for modern usage) and express confidence in quickly picking it up."
+    }
+  ],
+  "behavioralQuestions": [
+    {
+      "question": "Tell me about a time you had to collaborate closely with a backend team to integrate APIs, similar to your experience at Tech Solutions Inc. What challenges did you encounter and how did you resolve them?",
+      "intention": "To assess the candidate's collaboration skills, experience in cross-functional team communication, and problem-solving in an integration context.",
+      "answer": "The candidate should describe a specific instance of API integration, highlighting communication strategies (e.g., daily stand-ups, shared documentation, clear API contracts), conflict resolution (e.g., differing opinions on data structures, error handling), and how they ensured smooth integration and delivery. STAR method is ideal here."
+    },
+    {
+      "question": "You mentioned a passion for solving complex problems. Can you describe a situation where you had to tackle a particularly difficult or ambiguous technical challenge? What was your process, and what was the outcome?",
+      "intention": "To understand the candidate's approach to ambiguity and complex problem-solving, demonstrating analytical thinking and persistence.",
+      "answer": "The candidate should detail a challenging technical problem (could be from a project or professional experience), outlining their structured approach: breaking down the problem, researching solutions, prototyping, testing, and iterating. Focus on their thought process, how they dealt with setbacks, and the ultimate successful resolution."
+    },
+    {
+      "question": "As a full-stack developer, you often have to balance different aspects of development (frontend, backend, database). How do you prioritize your work and manage your time effectively when working on diverse tasks?",
+      "intention": "To evaluate the candidate's organizational skills, time management, and ability to context-switch or prioritize effectively in a full-stack role.",
+      "answer": "The candidate should discuss their strategies for task management (e.g., using project management tools, breaking down large tasks, setting daily goals), prioritizing based on impact or dependencies, and handling context switching efficiently. Mentioning communication with team leads about priorities is a plus."
+    }
+  ],
+  "skillGaps": [{ "skill": "Redux", "severity": "medium" }],
+  "preparationPlan": [
+    {
+      "day": 1,
+      "tasks": [
+        "Complete a Redux crash course or official Redux documentation tutorial.",
+        "Understand core Redux principles: Store, Actions, Reducers, Middleware.",
+        "Set up a basic React application with Redux Toolkit for state management."
+      ],
+      "focus": "Redux Fundamentals and Setup"
+    },
+    {
+      "day": 2,
+      "tasks": [
+        "Implement a simple feature (e.g., a counter, a todo list) using Redux Toolkit in a React app.",
+        "Explore Redux DevTools for debugging.",
+        "Research common Redux patterns and best practices."
+      ],
+      "focus": "Applying Redux and Best Practices"
+    },
+    {
+      "day": 3,
+      "tasks": [
+        "Review your existing projects or a small personal project. Identify areas where Redux could improve state management.",
+        "Practice explaining Redux concepts and architecture verbally.",
+        "Review the job description and your resume, anticipating questions related to state management and how you've applied Redux or similar libraries."
+      ],
+      "focus": "Integration and Communication Skills"
+    }
+  ]
+}

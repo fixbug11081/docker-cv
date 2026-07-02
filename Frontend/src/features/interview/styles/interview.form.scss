@@ -1,0 +1,85 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+
+  .report-container {
+    width: 60%;
+    justify-items: center;
+  }
+
+  .report-grid {
+    display: flex; /* row layout */
+    flex-wrap: wrap; /* wrap into multiple rows */
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
+  .report-card {
+    flex: 0 0 250px; /* fixed card width */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .report-title {
+    margin: 0 0 0.5rem;
+    font-weight: bold;
+  }
+
+  .create-item,
+  .match-score {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .open-report {
+    margin-top: 0.5rem;
+    background: palevioletred;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 0.7rem;
+    padding-block: 0.5rem;
+    gap: 0.9rem;
+
+    input {
+      width: 150%;
+      height: 20px;
+      padding: 10px;
+      border-radius: 15px;
+    }
+  }
+  .bttn-primary {
+    width: 50%;
+    background-color: palevioletred;
+    margin-left: 10px;
+    border-radius: 15px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
