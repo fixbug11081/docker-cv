@@ -140,6 +140,7 @@ async function getResumePdf(req, res) {
     "Content-Type": "application/pdf",
     "Content-Desposition": `attachment;filename=resume_${interviewReportId}.pdf`,
   });
+
   res.send(pdfBuffer);
 }
 module.exports = {

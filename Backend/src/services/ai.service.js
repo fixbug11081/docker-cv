@@ -158,13 +158,15 @@ const targetResumeSchema = {
 
 async function utilityResumePdf(htmlContent) {
   const browser = await puppeteer.launch({
-    headless: true, // run in headless mode
-    args: ["--no-sandbox", "--disable-setuid-sandbox"], // safe defaults
+    executablePath:
+      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", // or Edge path
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: "networkidle2" });
 
-  // Saves the PDF to hn.pdf.
   const pdfBuffer = await page.pdf({
     format: "A4",
     margin: { top: "20mm", bottom: "20mm", left: "15mm", right: "15mm" },
@@ -173,6 +175,7 @@ async function utilityResumePdf(htmlContent) {
   await browser.close();
   return pdfBuffer;
 }
+
 async function generateResumePdf({ jobDescription, selfDescription, resume }) {
   const code = `Generate a new resume in pure HTML format based on:
 Resume: ${resume}
