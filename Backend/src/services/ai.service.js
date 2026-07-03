@@ -155,20 +155,19 @@ const targetResumeSchema = {
   },
   required: ["resume"],
 };
-
 async function utilityResumePdf(htmlContent) {
+  // Launch Puppeteer (bundled Chromium works fine on Windows)
   const browser = await puppeteer.launch({
-    executablePath:
-      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", // or Edge path
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
   const page = await browser.newPage();
-  await page.setContent(htmlContent, { waitUntil: "networkidle2" });
+  await page.setContent(htmlContent, { waitUntil: "networkidle0" });
 
   const pdfBuffer = await page.pdf({
     format: "A4",
+    printBackground: true,
     margin: { top: "20mm", bottom: "20mm", left: "15mm", right: "15mm" },
   });
 
