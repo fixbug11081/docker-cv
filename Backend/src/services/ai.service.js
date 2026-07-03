@@ -1,6 +1,6 @@
 const { GoogleGenAI, Type } = require("@google/genai");
 
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GOOGLE_GENAI_API_KEY,
@@ -157,7 +157,10 @@ const targetResumeSchema = {
 };
 
 async function utilityResumePdf(htmlContent) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true, // run in headless mode
+    args: ["--no-sandbox", "--disable-setuid-sandbox"], // safe defaults
+  });
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: "networkidle2" });
 
@@ -192,6 +195,7 @@ Return the HTML string inside the 'resume' field only.`;
   const jsonContent = JSON.parse(response.text);
   console.log(jsonContent);
   const pdfBuffer = await utilityResumePdf(jsonContent.resume);
+
   return pdfBuffer;
 }
 

@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    environment {
+        MONGO_URI = credentials('MONGO_URI')
+        GOOGLE_GENAI_API_KEY = credentials('GOOGLE_GENAI_API_KEY')
+        SECRETS = credentials('SECRETS')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                powershell 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                powershell 'npm run build'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                powershell '''
+                docker build `
+                  --build-arg MONGO_URI=$env:MONGO_URI `
+                  --build-arg GOOGLE_GENAI_API_KEY=$env:GOOGLE_GENAI_API_KEY `
+                  --build-arg PORT=$env:PORT `
+                  -t resumesystem .
+                '''
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                powershell '''
+                docker run -d -p 3000:3000 `
+                  -e MONGO_URI=$env:MONGO_URI `
+                  -e GOOGLE_GENAI_API_KEY=$env:GOOGLE_GENAI_API_KEY `
+                  -e PORT=$env:PORT resumesystem
+                '''
+            }
+        }
+    }
+}
