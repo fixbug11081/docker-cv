@@ -155,9 +155,18 @@ const targetResumeSchema = {
   },
   required: ["resume"],
 };
+const puppeteer = require("puppeteer");
+
 async function utilityResumePdf(htmlContent) {
-  // Launch Puppeteer (bundled Chromium works fine on Windows)
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    // If you want to use installed Chrome/Edge instead of bundled Chromium:
+    executablePath:
+      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    // Or for Microsoft Edge:
+    // executablePath: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
 
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: "networkidle2" });
@@ -168,7 +177,7 @@ async function utilityResumePdf(htmlContent) {
     margin: { top: "20mm", bottom: "20mm", left: "15mm", right: "15mm" },
   });
 
-  browser.close();
+  await browser.close();
   return pdfBuffer;
 }
 
