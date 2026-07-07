@@ -155,7 +155,6 @@ const targetResumeSchema = {
   },
   required: ["resume"],
 };
-const puppeteer = require("puppeteer");
 
 async function utilityResumePdf(htmlContent) {
   const browser = await puppeteer.launch({
