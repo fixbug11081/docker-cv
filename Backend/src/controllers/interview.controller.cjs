@@ -123,7 +123,7 @@ async function getAllInterviewReports(req, res) {
  */
 async function getResumePdf(req, res) {
   const { interviewReportId } = req.params;
-  console.log(interviewReportId);
+
   const interviewReport =
     await interviewReportModel.findById(interviewReportId);
   console.log(interviewReport);
@@ -135,7 +135,7 @@ async function getResumePdf(req, res) {
     selfDescription: interviewReport.selfDescription,
     resume: interviewReport.resume,
   });
-  console.log(pdfBuffer);
+
   res.set({
     "Content-Type": "application/pdf",
     "Content-Desposition": `attachment;filename=resume_${interviewReportId}.pdf`,

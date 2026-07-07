@@ -157,10 +157,7 @@ const targetResumeSchema = {
 };
 async function utilityResumePdf(htmlContent) {
   // Launch Puppeteer (bundled Chromium works fine on Windows)
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const browser = await puppeteer.launch();
 
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: "networkidle0" });
@@ -195,7 +192,7 @@ Return the HTML string inside the 'resume' field only.`;
   });
 
   const jsonContent = JSON.parse(response.text);
-  console.log(jsonContent);
+
   const pdfBuffer = await utilityResumePdf(jsonContent.resume);
 
   return pdfBuffer;
