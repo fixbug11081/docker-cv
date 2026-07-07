@@ -158,11 +158,6 @@ const targetResumeSchema = {
 
 async function utilityResumePdf(htmlContent) {
   const browser = await puppeteer.launch({
-    // If you want to use installed Chrome/Edge instead of bundled Chromium:
-    executablePath:
-      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    // Or for Microsoft Edge:
-    // executablePath: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
