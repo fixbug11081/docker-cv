@@ -11,8 +11,13 @@ RUN npm run build
 FROM node:22-alpine AS backend
 
 WORKDIR /app
+
 COPY ./Backend/package*.json ./
 RUN npm install
+
+# Clean Puppeteer cache to avoid ENOENT errors and reduce image size
+RUN rm -rf /root/.cache/puppeteer
+
 COPY ./Backend ./
 
 # Copy frontend build output into backend's public folder
