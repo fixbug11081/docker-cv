@@ -35,5 +35,7 @@ COPY ./Backend ./
 # Copy frontend build output into backend's public folder
 COPY --from=frontend-builder /app/dist ./public
 
+EXPOSE 3000
+
 # Default command
 CMD ["node", "server.js"]
