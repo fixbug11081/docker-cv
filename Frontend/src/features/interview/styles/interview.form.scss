@@ -82,4 +82,18 @@ main {
     height: 40px;
     cursor: pointer;
   }
+  .logout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    button {
+      background-color: palevioletred;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+    }
+  }
 }

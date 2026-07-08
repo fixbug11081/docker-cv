@@ -31,6 +31,9 @@ const Home = () => {
   }
   return (
     <main className="home">
+      <div className="logout">
+        <button>Logout</button>
+      </div>
       <h1>Create Custom Interview Plan</h1>
       <div className="left">
         <label htmlFor="JobDescription">Job description</label>

@@ -22,14 +22,14 @@ async function generateReport(req, res) {
     const resumeText = pdfData.text;
 
     const { selfDescription, jobDescription } = req.body;
-    console.log("Calling function generateInetrviewReport");
+
     // Generate the report object from the AI service
     const reportStr = await generateInterviewReport({
       resume: resumeText, // Pass parsed text string, not the full object
       selfDescription,
       jobDescription,
     });
-    console.log(reportStr);
+
     // Explicitly parse the response text string into a JS object
     let reportData;
     if (typeof reportStr === "object" && reportStr !== null) {
