@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/plan.scss";
 import { useInterview } from "../hooks/useInterview";
 import { useParams } from "react-router-dom";
+import Header from "./Header";
 
 const Interview = () => {
   const [section, setSection] = useState(() => {
@@ -19,7 +20,6 @@ const Interview = () => {
       return;
     }
 
-    console.log("Fetching report for interviewId:", interviewId);
     getReportById(interviewId);
   }, [interviewId]);
 
@@ -99,6 +99,7 @@ const Interview = () => {
 
   return (
     <div className="container">
+      <Header />
       {/* Column 1: Navigation */}
       <div className="column nav">
         <h2>Sections</h2>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/interview.form.scss";
 import { useInterview } from "../hooks/useInterview";
 import { useEffect } from "react";
+import Header from "./Header";
 
 const Home = () => {
   const { loading, getReport, getAllReport, reports } = useInterview();
@@ -31,9 +32,7 @@ const Home = () => {
   }
   return (
     <main className="home">
-      <div className="logout">
-        <button>Logout</button>
-      </div>
+      <Header />
       <h1>Create Custom Interview Plan</h1>
       <div className="left">
         <label htmlFor="JobDescription">Job description</label>
