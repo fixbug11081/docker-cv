@@ -1,14 +1,14 @@
 import axios from "axios";
 
-/*const api = axios.create({
+const api = axios.create({
   baseURL: "http://localhost:3000",
   withCredentials: true,
-});*/
+});
 
-const api = axios.create({
+/*const api = axios.create({
   baseURL: "/",
   withCredentials: true,
-});
+});*/
 
 export async function register({ username, email, password }) {
   try {
@@ -24,9 +24,9 @@ export async function register({ username, email, password }) {
       },
     );
 
-    return response.data;
+    return { success: true, data: response.data };
   } catch (err) {
-    return err.message;
+    return { success: false, error: err.response?.data || err.message };
   }
 }
 export async function login({ email, password }) {

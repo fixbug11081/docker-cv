@@ -150,7 +150,7 @@ const targetResumeSchema = {
     resume: {
       type: Type.STRING,
       description:
-        "Provide the targeted resume HTML string on basis of self description, resume, job description",
+        "Provide the targeted ATS-compliant resume HTML string on basis of self description, resume, job description",
     },
   },
   required: ["resume"],

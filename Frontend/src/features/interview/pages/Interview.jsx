@@ -99,7 +99,6 @@ const Interview = () => {
 
   return (
     <div className="container">
-      <Header />
       {/* Column 1: Navigation */}
       <div className="column nav">
         <h2>Sections</h2>

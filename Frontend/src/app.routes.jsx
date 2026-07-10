@@ -4,7 +4,14 @@ import Login from "./features/auth/pages/Login";
 import Homepage from "./features/interview/pages/Home";
 import Protected from "./features/auth/components/Protected";
 import Interview from "./features/interview/pages/Interview";
+import Header from "./features/interview/pages/Header";
 
+const ProtectedLayout = ({ children }) => (
+  <Protected>
+    <Header />
+    <main>{children}</main>
+  </Protected>
+);
 export const router = createBrowserRouter([
   {
     path: "/login",
@@ -17,17 +24,17 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Protected>
+      <ProtectedLayout>
         <Homepage />
-      </Protected>
+      </ProtectedLayout>
     ),
   },
   {
     path: "/interview/:interviewId",
     element: (
-      <Protected>
+      <ProtectedLayout>
         <Interview />
-      </Protected>
+      </ProtectedLayout>
     ),
   },
 ]);
